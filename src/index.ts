@@ -169,7 +169,7 @@ export class ThinkNEO {
     return h;
   }
 
-  private async rpc(method: string, params: Record<string, unknown>): Promise<Record<string, unknown>> {
+  private async rpc(method: string, params: Record<string, unknown>): Promise<any> {
     const payload: JsonRpcRequest = {
       jsonrpc: "2.0",
       method,
@@ -318,7 +318,7 @@ export class ThinkNEO {
   }
 
   /** Simulate AI cost savings with Smart Router. No API key needed. */
-  async simulateSavings(monthlyAiSpend: number, primaryModel = "gpt-4o"): Promise<Record<string, unknown>> {
+  async simulateSavings(monthlyAiSpend: number, primaryModel = "gpt-4o"): Promise<any> {
     return this.toolCall("thinkneo_simulate_savings", { monthly_ai_spend: monthlyAiSpend, primary_model: primaryModel });
   }
 
@@ -395,225 +395,225 @@ export class ThinkNEO {
   }
 
   /** Find cheapest model meeting quality threshold. Requires API key. */
-  async routeModel(taskType: string, qualityThreshold = 85): Promise<Record<string, unknown>> {
+  async routeModel(taskType: string, qualityThreshold = 85): Promise<any> {
     return this.toolCall("thinkneo_route_model", { task_type: taskType, quality_threshold: qualityThreshold });
   }
 
   /** AI cost savings report. Requires API key. */
-  async getSavingsReport(period = "30d"): Promise<Record<string, unknown>> {
+  async getSavingsReport(period = "30d"): Promise<any> {
     return this.toolCall("thinkneo_get_savings_report", { period });
   }
 
   /** Search MCP Marketplace. No API key needed. */
-  async registrySearch(query = "", category?: string): Promise<Record<string, unknown>> {
+  async registrySearch(query = "", category?: string): Promise<any> {
     return this.toolCall("thinkneo_registry_search", { query, category });
   }
 
   /** Get MCP server package details. No API key needed. */
-  async registryGet(name: string): Promise<Record<string, unknown>> {
+  async registryGet(name: string): Promise<any> {
     return this.toolCall("thinkneo_registry_get", { name });
   }
 
   /** Get install config for an MCP server. No API key needed. */
-  async registryInstall(name: string, clientType = "claude-desktop"): Promise<Record<string, unknown>> {
+  async registryInstall(name: string, clientType = "claude-desktop"): Promise<any> {
     return this.toolCall("thinkneo_registry_install", { name, client_type: clientType });
   }
 
   // --- Auto-generated methods for additional tools ---
 
-  async startTrace(agentName: string): Promise<Record<string, unknown>> {
+  async startTrace(agentName: string): Promise<any> {
     return this.toolCall("thinkneo_start_trace", { agent_name: agentName });
   }
 
-  async logEvent(sessionId: string, eventType: string): Promise<Record<string, unknown>> {
+  async logEvent(sessionId: string, eventType: string): Promise<any> {
     return this.toolCall("thinkneo_log_event", { session_id: sessionId, event_type: eventType });
   }
 
-  async endTrace(sessionId: string): Promise<Record<string, unknown>> {
+  async endTrace(sessionId: string): Promise<any> {
     return this.toolCall("thinkneo_end_trace", { session_id: sessionId });
   }
 
-  async getTrace(sessionId: string): Promise<Record<string, unknown>> {
+  async getTrace(sessionId: string): Promise<any> {
     return this.toolCall("thinkneo_get_trace", { session_id: sessionId });
   }
 
-  async getObservabilityDashboard(): Promise<Record<string, unknown>> {
+  async getObservabilityDashboard(): Promise<any> {
     return this.toolCall("thinkneo_get_observability_dashboard", {});
   }
 
-  async evaluateTrustScore(orgName: string): Promise<Record<string, unknown>> {
+  async evaluateTrustScore(orgName: string): Promise<any> {
     return this.toolCall("thinkneo_evaluate_trust_score", { org_name: orgName });
   }
 
-  async getTrustBadge(reportToken: string): Promise<Record<string, unknown>> {
+  async getTrustBadge(reportToken: string): Promise<any> {
     return this.toolCall("thinkneo_get_trust_badge", { report_token: reportToken });
   }
 
-  async setBaseline(processName: string, costPerUnit: number): Promise<Record<string, unknown>> {
+  async setBaseline(processName: string, costPerUnit: number): Promise<any> {
     return this.toolCall("thinkneo_set_baseline", { process_name: processName, cost_per_unit_usd: costPerUnit });
   }
 
-  async logDecision(agentName: string, decisionType: string): Promise<Record<string, unknown>> {
+  async logDecision(agentName: string, decisionType: string): Promise<any> {
     return this.toolCall("thinkneo_log_decision", { agent_name: agentName, decision_type: decisionType });
   }
 
-  async decisionCost(): Promise<Record<string, unknown>> {
+  async decisionCost(): Promise<any> {
     return this.toolCall("thinkneo_decision_cost", {});
   }
 
-  async logRiskAvoidance(riskType: string): Promise<Record<string, unknown>> {
+  async logRiskAvoidance(riskType: string): Promise<any> {
     return this.toolCall("thinkneo_log_risk_avoidance", { risk_type: riskType });
   }
 
-  async agentRoi(): Promise<Record<string, unknown>> {
+  async agentRoi(): Promise<any> {
     return this.toolCall("thinkneo_agent_roi", {});
   }
 
-  async businessImpact(): Promise<Record<string, unknown>> {
+  async businessImpact(): Promise<any> {
     return this.toolCall("thinkneo_business_impact", {});
   }
 
-  async detectWaste(): Promise<Record<string, unknown>> {
+  async detectWaste(): Promise<any> {
     return this.toolCall("thinkneo_detect_waste", {});
   }
 
-  async registerClaim(action: string, target: string, evidenceType: string): Promise<Record<string, unknown>> {
+  async registerClaim(action: string, target: string, evidenceType: string): Promise<any> {
     return this.toolCall("thinkneo_register_claim", { action: action, target: target, evidence_type: evidenceType });
   }
 
-  async verifyClaim(claimId: string): Promise<Record<string, unknown>> {
+  async verifyClaim(claimId: string): Promise<any> {
     return this.toolCall("thinkneo_verify_claim", { claim_id: claimId });
   }
 
-  async getProof(claimId: string): Promise<Record<string, unknown>> {
+  async getProof(claimId: string): Promise<any> {
     return this.toolCall("thinkneo_get_proof", { claim_id: claimId });
   }
 
-  async verificationDashboard(): Promise<Record<string, unknown>> {
+  async verificationDashboard(): Promise<any> {
     return this.toolCall("thinkneo_verification_dashboard", {});
   }
 
-  async policyCreate(name: string, conditions: string, effect: string): Promise<Record<string, unknown>> {
+  async policyCreate(name: string, conditions: string, effect: string): Promise<any> {
     return this.toolCall("thinkneo_policy_create", { name: name, conditions: conditions, effect: effect });
   }
 
-  async policyEvaluate(context: string): Promise<Record<string, unknown>> {
+  async policyEvaluate(context: string): Promise<any> {
     return this.toolCall("thinkneo_policy_evaluate", { context: context });
   }
 
-  async policyList(): Promise<Record<string, unknown>> {
+  async policyList(): Promise<any> {
     return this.toolCall("thinkneo_policy_list", {});
   }
 
-  async policyViolations(): Promise<Record<string, unknown>> {
+  async policyViolations(): Promise<any> {
     return this.toolCall("thinkneo_policy_violations", {});
   }
 
-  async complianceGenerate(framework: string): Promise<Record<string, unknown>> {
+  async complianceGenerate(framework: string): Promise<any> {
     return this.toolCall("thinkneo_compliance_generate", { framework: framework });
   }
 
-  async complianceList(): Promise<Record<string, unknown>> {
+  async complianceList(): Promise<any> {
     return this.toolCall("thinkneo_compliance_list", {});
   }
 
-  async bridgeMcpToA2a(mcpToolName: string): Promise<Record<string, unknown>> {
+  async bridgeMcpToA2a(mcpToolName: string): Promise<any> {
     return this.toolCall("thinkneo_bridge_mcp_to_a2a", { mcp_tool_name: mcpToolName });
   }
 
-  async bridgeA2aToMcp(a2aTask: string): Promise<Record<string, unknown>> {
+  async bridgeA2aToMcp(a2aTask: string): Promise<any> {
     return this.toolCall("thinkneo_bridge_a2a_to_mcp", { a2a_task: a2aTask });
   }
 
-  async bridgeGenerateAgentCard(): Promise<Record<string, unknown>> {
+  async bridgeGenerateAgentCard(): Promise<any> {
     return this.toolCall("thinkneo_bridge_generate_agent_card", {});
   }
 
-  async bridgeListMappings(): Promise<Record<string, unknown>> {
+  async bridgeListMappings(): Promise<any> {
     return this.toolCall("thinkneo_bridge_list_mappings", {});
   }
 
-  async a2aLog(fromAgent: string, toAgent: string, action: string): Promise<Record<string, unknown>> {
+  async a2aLog(fromAgent: string, toAgent: string, action: string): Promise<any> {
     return this.toolCall("thinkneo_a2a_log", { from_agent: fromAgent, to_agent: toAgent, action: action });
   }
 
-  async a2aSetPolicy(fromAgent: string, toAgent: string): Promise<Record<string, unknown>> {
+  async a2aSetPolicy(fromAgent: string, toAgent: string): Promise<any> {
     return this.toolCall("thinkneo_a2a_set_policy", { from_agent: fromAgent, to_agent: toAgent });
   }
 
-  async a2aFlowMap(): Promise<Record<string, unknown>> {
+  async a2aFlowMap(): Promise<any> {
     return this.toolCall("thinkneo_a2a_flow_map", {});
   }
 
-  async a2aAudit(): Promise<Record<string, unknown>> {
+  async a2aAudit(): Promise<any> {
     return this.toolCall("thinkneo_a2a_audit", {});
   }
 
-  async benchmarkCompare(taskType: string): Promise<Record<string, unknown>> {
+  async benchmarkCompare(taskType: string): Promise<any> {
     return this.toolCall("thinkneo_benchmark_compare", { task_type: taskType });
   }
 
-  async benchmarkReport(): Promise<Record<string, unknown>> {
+  async benchmarkReport(): Promise<any> {
     return this.toolCall("thinkneo_benchmark_report", {});
   }
 
-  async routerExplain(taskType: string): Promise<Record<string, unknown>> {
+  async routerExplain(taskType: string): Promise<any> {
     return this.toolCall("thinkneo_router_explain", { task_type: taskType });
   }
 
-  async slaDefine(agentName: string, metric: string, threshold: number): Promise<Record<string, unknown>> {
+  async slaDefine(agentName: string, metric: string, threshold: number): Promise<any> {
     return this.toolCall("thinkneo_sla_define", { agent_name: agentName, metric: metric, threshold: threshold });
   }
 
-  async slaStatus(): Promise<Record<string, unknown>> {
+  async slaStatus(): Promise<any> {
     return this.toolCall("thinkneo_sla_status", {});
   }
 
-  async slaDashboard(): Promise<Record<string, unknown>> {
+  async slaDashboard(): Promise<any> {
     return this.toolCall("thinkneo_sla_dashboard", {});
   }
 
-  async slaBreaches(): Promise<Record<string, unknown>> {
+  async slaBreaches(): Promise<any> {
     return this.toolCall("thinkneo_sla_breaches", {});
   }
 
-  async registryPublish(name: string, displayName: string, description: string, endpointUrl: string): Promise<Record<string, unknown>> {
+  async registryPublish(name: string, displayName: string, description: string, endpointUrl: string): Promise<any> {
     return this.toolCall("thinkneo_registry_publish", { name: name, display_name: displayName, description: description, endpoint_url: endpointUrl });
   }
 
-  async registryReview(name: string, rating: number): Promise<Record<string, unknown>> {
+  async registryReview(name: string, rating: number): Promise<any> {
     return this.toolCall("thinkneo_registry_review", { name: name, rating: rating });
   }
 
-  async detectSecrets(code: string): Promise<Record<string, unknown>> {
+  async detectSecrets(code: string): Promise<any> {
     return this.toolCall("thinkneo_detect_secrets", { code: code });
   }
 
-  async detectInjection(text: string): Promise<Record<string, unknown>> {
+  async detectInjection(text: string): Promise<any> {
     return this.toolCall("thinkneo_detect_injection", { text: text });
   }
 
-  async compareModels(): Promise<Record<string, unknown>> {
+  async compareModels(): Promise<any> {
     return this.toolCall("thinkneo_compare_models", {});
   }
 
-  async optimizePrompt(prompt: string): Promise<Record<string, unknown>> {
+  async optimizePrompt(prompt: string): Promise<any> {
     return this.toolCall("thinkneo_optimize_prompt", { prompt: prompt });
   }
 
-  async countTokens(text: string): Promise<Record<string, unknown>> {
+  async countTokens(text: string): Promise<any> {
     return this.toolCall("thinkneo_count_tokens", { text: text });
   }
 
-  async detectPii(text: string): Promise<Record<string, unknown>> {
+  async detectPii(text: string): Promise<any> {
     return this.toolCall("thinkneo_detect_pii", { text: text });
   }
 
-  async cachePrompt(key: string): Promise<Record<string, unknown>> {
+  async cachePrompt(key: string): Promise<any> {
     return this.toolCall("thinkneo_cache_prompt", { key: key });
   }
 
-  async rotateKey(): Promise<Record<string, unknown>> {
+  async rotateKey(): Promise<any> {
     return this.toolCall("thinkneo_rotate_key", {});
   }
 
