@@ -15,4 +15,8 @@ jobs:
         with:
           node-version: "20"
       - run: npm ci || npm install
-      - run: npx tsc --noEmit || true
+      - run: npx tsc --noEmit
+      - name: Unit tests
+        run: npx vitest run --reporter=verbose
+      - name: Coverage check (≥85% lines)
+        run: npx vitest run --coverage

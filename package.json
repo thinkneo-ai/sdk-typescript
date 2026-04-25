@@ -19,9 +19,11 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc && tsc --module esnext --outDir dist/esm",
+    "build": "tsc",
     "prepublishOnly": "npm run build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "thinkneo",
@@ -47,6 +49,8 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.4.0"
+    "@vitest/coverage-v8": "^4.1.5",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.5"
   }
 }
